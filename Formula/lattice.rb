@@ -9,20 +9,20 @@ class Lattice < Formula
   license "Apache 2.0"
 
   on_macos do
-    url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_darwin_amd64.tar.gz"
-    sha256 "439b1a815c1a483a7c7ed753881f8b888aa0e966d64093527322f23d30603fdb"
+    if Hardware::CPU.intel?
+      url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_darwin_amd64.tar.gz"
+      sha256 "c4424cdb1eebb8db8bb0bfb236062f3afb2607c7dbe26e98f9660f699715a40a"
 
-    define_method(:install) do
-      bin.install "lattice"
+      define_method(:install) do
+        bin.install "lattice"
+      end
     end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Lattice
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_darwin_arm64.tar.gz"
+      sha256 "bc45ef80101eec28f1be212deae34f25d6f01d12e64cfa451a6aa9d85eaa23a3"
+
+      define_method(:install) do
+        bin.install "lattice"
       end
     end
   end
@@ -30,7 +30,14 @@ class Lattice < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_linux_amd64.tar.gz"
-      sha256 "9cf948689c5297a0149dc35e8a2aa11016a7d113d31ab72257fa6f6bc749d4b0"
+      sha256 "3b8424a8c538c5dc12ef2e15391ab00eaecde64ec9d611e896af3ae037559674"
+      define_method(:install) do
+        bin.install "lattice"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_linux_arm64.tar.gz"
+      sha256 "126fe3812a44d356584494fcd52d8844f14d42e217454d377f5756eef3a7e398"
       define_method(:install) do
         bin.install "lattice"
       end
