@@ -11,7 +11,7 @@ class Lattice < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_darwin_amd64.tar.gz"
-      sha256 "92de86944dfd8c6a84c88d68f115c1b251590b21c9a5c87253fe81487f9f4ba8"
+      sha256 "38d3207e99e2c47482054d5c13cf6d08b64fe4bb62ecb2abfe3174a045324a42"
 
       define_method(:install) do
         bin.install "lattice"
@@ -19,7 +19,7 @@ class Lattice < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_darwin_arm64.tar.gz"
-      sha256 "1857d722cb751aac1567bac9a9fb8551e6d5c341f858be7e8cbac26f39a74699"
+      sha256 "4059cb1f8bb04aed0181e9c2c686971fc5cbce89f3afa621e8703435e35ff51b"
 
       define_method(:install) do
         bin.install "lattice"
@@ -30,14 +30,14 @@ class Lattice < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_linux_amd64.tar.gz"
-      sha256 "c84acd843c466dd5977fae230d328f90a321c09f82b9de1ae4bec9b20918db5a"
+      sha256 "afdabec5dd02f5c781700a10421cd8909e33f1816ba3b8f6f30a9c28fb45642f"
       define_method(:install) do
         bin.install "lattice"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_linux_arm64.tar.gz"
-      sha256 "c4c2be0921a998a50535d3acc9cc7b089a98d30685f1b2b4b1385b7da2ea4f2a"
+      sha256 "4bb1995711cd9c0b80e0f3977959252c083d5cae0dc374a9b9c77b51c05bff93"
       define_method(:install) do
         bin.install "lattice"
       end
