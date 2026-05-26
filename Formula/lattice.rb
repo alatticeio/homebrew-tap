@@ -5,21 +5,21 @@
 class Lattice < Formula
   desc "Lattice edge agent — secure peer-to-peer networking"
   homepage "https://github.com/alatticeio/lattice"
-  version "0.1.0-alpha"
+  version "0.0.1-alpha"
   license "Apache 2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_darwin_amd64.tar.gz"
-      sha256 "38d3207e99e2c47482054d5c13cf6d08b64fe4bb62ecb2abfe3174a045324a42"
+      url "https://github.com/alatticeio/lattice/releases/download/v0.0.1-alpha/lattice_0.0.1-alpha_darwin_amd64.tar.gz"
+      sha256 "0b2a413c1d73c3382f7edee9813477a768734ec3bed485c030ac8385f8774bc6"
 
       define_method(:install) do
         bin.install "lattice"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_darwin_arm64.tar.gz"
-      sha256 "4059cb1f8bb04aed0181e9c2c686971fc5cbce89f3afa621e8703435e35ff51b"
+      url "https://github.com/alatticeio/lattice/releases/download/v0.0.1-alpha/lattice_0.0.1-alpha_darwin_arm64.tar.gz"
+      sha256 "b2003cb3e06ecab85b3220f6d904323e59a82db9176e358e505845f59eb31b1c"
 
       define_method(:install) do
         bin.install "lattice"
@@ -29,15 +29,15 @@ class Lattice < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_linux_amd64.tar.gz"
-      sha256 "afdabec5dd02f5c781700a10421cd8909e33f1816ba3b8f6f30a9c28fb45642f"
+      url "https://github.com/alatticeio/lattice/releases/download/v0.0.1-alpha/lattice_0.0.1-alpha_linux_amd64.tar.gz"
+      sha256 "f38345c1180b03a6579cab1197a4061d18be761bc8201d8fb527a8a0137a9ad7"
       define_method(:install) do
         bin.install "lattice"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alatticeio/lattice/releases/download/v0.1.0-alpha/lattice_0.1.0-alpha_linux_arm64.tar.gz"
-      sha256 "4bb1995711cd9c0b80e0f3977959252c083d5cae0dc374a9b9c77b51c05bff93"
+      url "https://github.com/alatticeio/lattice/releases/download/v0.0.1-alpha/lattice_0.0.1-alpha_linux_arm64.tar.gz"
+      sha256 "8145119cb1e44b55f15ec2d27e25a81d66f20270aa36867451ad73701619e2b1"
       define_method(:install) do
         bin.install "lattice"
       end
